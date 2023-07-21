@@ -150,6 +150,32 @@ main .projekti .box{
 	width: 100%;
 	/*margin:0px 15px;*/
 }
+main .projekti .box .xyz{
+	max-height: 315px;
+	overflow: auto;
+    overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333539; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #74797f; 
+}
+
+
+main .projekti .box .box{
+	display: flex;
+	align-items: center;
+}
 main .projekti .item{
 	background: #212326;
 	border-radius: 3px;
@@ -162,9 +188,16 @@ main .projekti .item{
 	transition: 0.2s;
 
 	margin:5px 0px;
-	width: 93%;
+	width: 92%;
 	justify-content: space-between;
 	cursor: pointer;
+}
+main .projekti .box i{
+	font-size: 12px;
+	padding-right: 5px;
+	display: flex;
+	margin-top: 3px;
+	color: #494e5f;
 }
 main .projekti .item img{
 	width: 20px;
