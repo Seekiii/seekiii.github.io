@@ -1,98 +1,222 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="static/css/style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <meta content="Seekii - Portfolio" property="og:title" />
-        <meta content="20 year old who sometimes programs in his free time" property="og:description" />
-        <meta content="https://seekii.fr.gd.com" property="og:url" />
-        <meta content="https://avatars.githubusercontent.com/u/64194468?v=4" property="og:image" />
-        <meta content="#dddadb" data-react-helmet="true" name="theme-color" />
-        <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/64194468?v=4" />
-        <title>Seekii - Portfolio</title>
-    </head>
-    <body>
-        <main>
-            <div class="kartica">
-                <img src="https://avatars.githubusercontent.com/u/64194468?v=4">
-                <h1 class="ime">Seekii</h1>
-                <span>Web Developer</span>
-                <div class="informacije">
-                    <h2>ABOUT:</h2>
-                    <p>21 year old who sometimes programs in his free time</p>
-                </div>
-                <div class="socialne-mreze">
-                    <a href="https://github.com/Seekiii" 						target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-                    <a href="https://stackoverflow.com/users/15145360/seekii" 	target="_blank" rel="noopener noreferrer"><i class="bi bi-stack-overflow"></i></a>
-                    <a href="mailto:seekii.official@gmail.com" 					target="_blank" rel="noopener noreferrer" class="mail" 	data-text="seekii.official@gmail.com"><i class="bi bi-envelope"></i></a>
-                    <a href="https://steamcommunity.com/id/seekii" 				target="_blank" rel="noopener noreferrer"><i class="bi bi-steam"></i></a>
-                </div>
-                <div class="projekt">
-                    <p>Projects</p>
-                    <p class="hidden">Click</p>
-                    <i class="bi bi-arrow-down"></i>
-                </div>
-            </div>
-            <div class="projekti">
-                <div class="box">
-                    <h2>Websites:</h2>
-                    <div class="xyz s-flex-center-between">
-                    	<a target="_blank" rel="noopener noreferrer"href="http://eurodrmex.com">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> eurodrmex.com</div>
-                    	        <img src="static/img/eurodrmex.jpg">
-                    	    </div>
-                    	</a>
-                    	<a target="_blank" rel="noopener noreferrer"href="https://seekii.rf.gd/static/projects/websites/revolucijarp.com/index.html">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> revolucijarp.com</div>
-                    	        <img src="static/img/revolucijarp.jpg">
-                    	    </div>
-                    	</a>
-                    	<a target="_blank" rel="noopener noreferrer"href="https://seekii.rf.gd/static/projects/websites/novelarp.com/index.html">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> novelarp.com</div>
-                    	        <img src="static/img/novelarp.png">
-                    	    </div>
-                    	</a>
-                    	<a target="_blank" rel="noopener noreferrer"href="https://seekii.rf.gd/static/projects/websites/hugo-roleplay.info/index.html">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> hugo-roleplay.info</div>
-                    	        <img src="static/img/hugo-roleplay.png">
-                    	    </div>
-                    	</a>
-                    	<a target="_blank" rel="noopener noreferrer"href="https://seekii.rf.gd/static/projects/websites/argengoldrs.com/index.html">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> argengoldrs.com</div>
-                    	        <img src="static/img/argengoldrs.png">
-                    	    </div>
-                    	</a>
-                    	<a target="_blank" rel="noopener noreferrer"href="https://seekii.rf.gd/static/projects/websites/dzeny.com/index.html">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> dzeny.com</div>
-                    	        <img src="static/img/dzeny.png">
-                    	    </div>
-                    	</a>
-                    	<a target="_blank" rel="noopener noreferrer"href="https://seekii.rf.gd/static/projects/websites/secnx.com/index.html">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> secnx.com</div>
-                                <img src="static/img/argengoldrs.png">
-                    	    </div>
-                    	</a>
-                    	<a target="_blank" rel="noopener noreferrer"href="https://www.menogold.com/">
-                    	    <div class="item">
-                    	        <div class="box"><i class="bi bi-box-arrow-up-right"></i> menogold.com</div>
-                                <img src="static/img/argengoldrs.png">
-                    	    </div>
-                    	</a>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <div class="popup"></div>
-        <script type="text/javascript" src="static/js/script.js"></script>
-    </body>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<title>Seekii - Portfolio</title>
+
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+	<meta property="og:title" content="Seekii - Portfolio">
+	<meta property="og:description" content="21 year old who sometimes programs in his free time">
+	<meta property="og:url" content="https://seekii.github.io/portfolio">
+	<meta property="og:image" content="assets/img/logo.jpg">
+
+</head>
+<body>
+
+	<section>
+		<div class="pocetna">
+			<div class="logo"><img src="assets/img/logo.jpg" alt="Seekii - Portofolio | Avatar - Profile Picture - Logo"></div>
+			<div class="ime">seekii</div>
+			<div class="mini-opis">Web Developer</div>
+			<div class="opis">
+				<h3>About:</h3>
+				<p>21 year old who sometimes programs in his free time</p>
+			</div>
+	
+			<div class="drustvene-mreze">
+				<a href="https://github.com/Seekiii" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+				<a href="https://stackoverflow.com/users/15145360/seekii" target="_blank" rel="noopener noreferrer"><i class="bi bi-stack-overflow"></i></a>
+				<a href="mailto:seekii.official@gmail.com" target="_blank" rel="noopener noreferrer" class="mail" data-text="seekii.official@gmail.com"><i class="bi bi-envelope"></i></a>
+				<a href="https://steamcommunity.com/id/seekii" target="_blank" rel="noopener noreferrer"><i class="bi bi-steam"></i></a>
+			</div>
+	
+			<div class="projekti-dugme">
+				Projects
+				<i class="bi bi-chevron-down"></i>
+			</div>
+			<div class="projekti-menu" style="display:none;">
+				<div class="projekat-naslov" data-id="websites"><div><i class="bi bi-card-heading"></i> Websites</div> <span>8</span></div>
+				<!--<div class="projekat-naslov" data-id="nui"><div><i class="bi bi-controller"></i> NUI (FiveM) Design</div> <span>32</span></div>-->
+				<div class="projekat-naslov" data-id="thumbnails"><div><i class="bi bi-card-image"></i> Thumbnails</div> <span>22</span></div>
+				<!--<div class="projekat-naslov" data-id="python"><div><i class="bi bi-code-slash"></i> Python</div> <span>13</span></div>-->
+			</div>
+		</div>
+		<div class="informacije" style="display:none;" id="websites">
+			<h3>Websites</h3>
+			<div class="projekti-lista">
+
+				<div class="projekat">
+					<div class="naslov"><span>gradcazin.gov.ba</span> - <span>fanmade</span></div>
+					<a href="https://seekiii.github.io/gradcazin.gov.ba" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/gradcazin-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>eurodrmex.com</span></div>
+					<a href="https://eurodrmex.com" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/eurodrmex-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>revolucijarp.com</span></div>
+					<a href="https://seekii.rf.gd/static/projects/websites/revolucijarp.com/index.html" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/revolucijarp-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>dzeny.com</span></div>
+					<a href="https://seekii.rf.gd/static/projects/websites/dzeny.com/index.html" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/dzeny-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>secnx.com</span></div>
+					<a href="https://secnx.com/" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/secnx-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>arenagoldrs.com</span></div>
+					<a href="https://argengoldrs.com/" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/argengoldrs-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>menogold.com</span></div>
+					<a href="https://menogold.com" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/menogold-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>hugo-roleplay.info</span></div>
+					<a href="https://seekii.rf.gd/static/projects/websites/hugo-roleplay.info/index.html" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/hugorp-site.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>novelarp.com</span></div>
+					<a href="https://seekii.rf.gd/static/projects/websites/novelarp.com/index.html" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="assets/img/website/novelarp-site.jpg"></div></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="informacije" style="display:none;" id="thumbnails">
+			<h3>Thumbnails</h3>
+			<div class="projekti-lista">
+
+				<div class="projekat">
+					<div class="naslov"><span>EuroDrmex</span> <span>2021</span></div>
+					<a href="https://www.youtube.com/watch?v=SP90lK3BwXg" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/SP90lK3BwXg/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=azcRsosmwSk" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/azcRsosmwSk/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=FO1l_hGY3d4" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/FO1l_hGY3d4/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=dqQHnD1xk1M" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/dqQHnD1xk1M/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=Sd5HTZ59Nns" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/Sd5HTZ59Nns/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=qTR51NegQTw" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/qTR51NegQTw/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=W3rOuz4JQYY" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/W3rOuz4JQYY/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=LMG0evvFsvU" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/LMG0evvFsvU/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=8gLTA95XbvM" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/8gLTA95XbvM/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=fmh3i_co9co" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/fmh3i_co9co/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=6GpuYOFd2ug" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/6GpuYOFd2ug/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=Y0cnpIuuXu0" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/Y0cnpIuuXu0/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=WElQWJtc4A8" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/WElQWJtc4A8/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=H0fNgY5uP6E" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/H0fNgY5uP6E/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=Cxf_aID9je4" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/Cxf_aID9je4/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2020</span></div>
+					<a href="https://www.youtube.com/watch?v=AUFVRw203fI" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/AUFVRw203fI/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2019</span></div>
+					<a href="https://www.youtube.com/watch?v=etoc-jd2OX8" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/etoc-jd2OX8/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2019</span></div>
+					<a href="https://www.youtube.com/watch?v=_CFUql_Svbs" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/_CFUql_Svbs/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2019</span></div>
+					<a href="https://www.youtube.com/watch?v=jLJBJOeb0v0" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/jLJBJOeb0v0/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2019</span></div>
+					<a href="https://www.youtube.com/watch?v=GobZtuMH8Pk" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/GobZtuMH8Pk/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2019</span></div>
+					<a href="https://www.youtube.com/watch?v=U6SuPl44aIc" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/U6SuPl44aIc/mqdefault.jpg"></div></a>
+				</div>
+
+				<div class="projekat">
+					<div class="naslov"><span>Idiokratija</span> <span>2019</span></div>
+					<a href="https://www.youtube.com/watch?v=muKIiTIhOA0" target="_blank" rel="noopener noreferrer"><div class="slika"><img src="https://img.youtube.com/vi/muKIiTIhOA0/mqdefault.jpg"></div></a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
 </html>

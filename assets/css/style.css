@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Karla', sans-serif;
+    background: radial-gradient(circle, rgb(35 35 35) 0%, rgb(15 15 15) 100%);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    padding: 20px;
+    background-color: #0f0f0f;
+    border-radius: 10px;
+    border: 5px solid #ffffff1c;
+    display: flex;
+}
+
+section .logo {
+    display: flex;
+    justify-content: center;
+}
+
+section .logo img {
+    border-radius: 100%;
+    border: 3px solid #ffffff12;
+}
+
+section .ime {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 500;
+    color: #e5e2e2;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+section .mini-opis {
+    text-align: center;
+    font-weight: 300;
+    font-size: 13px;
+    color: #e5e2e270;
+}
+
+section .opis {
+    width: 300px;
+    font-weight: 300;
+    font-size: 13px;
+    color: #e5e2e270;
+    margin: 3px 0px;
+}
+
+section .opis h3 {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 10px;
+}
+
+section .opis p {
+    margin: 0;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/*--*/
+section .drustvene-mreze {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+section .drustvene-mreze a {
+    border-radius: 2px;
+    width: 24%;
+    height: 34px;
+    background: #212326;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dddadb;
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px 1px #dddadb0a inset;
+}
+
+section .drustvene-mreze a:hover {
+    background: #2f3236;
+    box-shadow: 0px 0px 0px 1px #dddadb12 inset;
+}
+
+section .projekti-dugme {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffffaa;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+section .projekti-dugme:hover {
+    color: #fff;
+}
+
+section .projekti-dugme i {
+    color: #ffffff70;
+    margin-top: 2px;
+}
+
+section .projekti-menu {
+    /*display: none;
+    */
+}
+
+section .projekti-menu .projekat-naslov {
+    width: 100%;
+    color: #ffffff70;
+    font-size: 15px;
+    margin: 2px 0px;
+    padding: 4px 0px;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.1s;
+}
+
+section .projekti-menu .projekat-naslov i {
+    padding-right: 3px;
+    font-size: 12px;
+}
+
+section .projekti-menu .projekat-naslov:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+section .projekti-menu .projekat-naslov span {}
+
+section .informacije {
+    margin-left: 10px;
+    border-left: 2px solid #212326;
+    width: 635px;
+    /*height: 425px;
+    */
+}
+
+section .informacije h3 {
+    margin: 0;
+    padding-left: 10px;
+}
+
+section .informacije .projekti-lista {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    max-height: 347px;
+    overflow: auto;
+    overflow-x: hidden;
+    /*max-height: ;
+    */
+}
+
+section .informacije .projekti-lista::-webkit-scrollbar {
+    width: 3px;
+}
+
+section .informacije .projekti-lista::-webkit-scrollbar-track {
+    background: #212326;
+}
+
+section .informacije .projekti-lista::-webkit-scrollbar-thumb {
+    background: #99181b;
+}
+
+section .informacije .projekat {
+    width: 300px;
+    /*height: 180px;
+    */
+    /*padding:4px;
+    */
+    margin: 8px;
+    filter: blur(0px);
+    transition: 0.1s;
+}
+
+section .informacije#thumbnails .projekat {
+    width: 195px;
+}
+
+section .informacije .projekat .naslov {
+    font-size: 14px;
+    /*width: 300px;
+    */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: 0.2s;
+    /* margin: 3px 0px;
+     */
+    background: #212326;
+    height: 26px;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 0px 0px 1px #dddadb0a inset, 0px 2px 11px 0px #0000007d;
+    position: relative;
+}
+
+section .informacije#thumbnails .projekat .naslov {
+    justify-content: space-between;
+}
+
+section .informacije#thumbnails .projekat .naslov span {
+    padding: 0px 10px;
+}
+
+section .informacije .projekat:hover {
+    cursor: pointer;
+    background: #21232650;
+    border-radius: 5px;
+}
+
+section .informacije .projekat:hover .slika img {
+    box-shadow: 0px 5px 5px #00000060;
+}
+
+section .informacije .projekat:hover .naslov {
+    color: #ffffffcc;
+}
+
+section .informacije .projekat .naslov span {
+    margin: 0;
+    padding: 0;
+}
+
+section .informacije .projekat .slika img {
+    width: 100%;
+    transition: 0.2s;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 5px 5px #00000060;
+    transition: 0.2s;
+    display: flex;
+}
+
+section .informacije .projekat {
+    border-radius: 10px 10px 0px 0px;
+}
+
+section .informacije .projekat .opis-skripte {
+    color: #ffffffba;
+    font-weight: 200;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 7px 10px;
+    background: #212326;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .informacije .projekat a {
+    text-decoration: none;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading i {
+    font-size: 20px;
+    color: #fff;
+    animation: rotiraj_anim 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes rotiraj_anim {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section {
+        flex-direction: column;
+    }
+
+    section .informacije {
+        margin-left: 0px;
+        border: 0;
+        background: #1a1a1a;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
+        border: 1px solid #ffffff10;
+        width: auto;
+    }
+
+    section .informacije .projekti-lista {
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    section .informacije .projekti-lista {
+        width: 100%;
+        max-height: inherit;
+        overflow: inherit;
+    }
+
+    section .informacije#thumbnails .projekat {
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 605px) {
+    section .informacije#thumbnails .projekat {
+        width: 100%;
+    }
+
+    .loading {
+        height: 100px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    section {
+        width: 80%;
+    }
+
+    section .opis {
+        width: 90%;
+    }
+}
