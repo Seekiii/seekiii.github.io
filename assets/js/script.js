@@ -57,3 +57,32 @@ $(".projekti-menu .projekat-naslov").on("click", function() {
         })
     })
 })
+
+$(".bi-card-image").on("mouseenter", function() {
+    var parent = $(this).attr("data-url");
+    var link_slike = "assets/img/website/" + parent.replace("https://","").split(".")[0] + "-site.jpg";
+    $(".img_popup").html(`<img src='${link_slike}'>`).stop(true, true).fadeIn(100);
+
+    $(document).on("mousemove", function(event) {
+        $(".img_popup").css({
+            top: event.clientY + 10,
+            left: event.clientX + 10
+        });
+    });
+}).on("mouseleave", function() {
+    $(".img_popup").stop(true, true).fadeOut(100);
+    $(document).off("mousemove");
+});
+
+
+$(".bi-card-image").on("click",function(){
+    var parent = $(this).attr("data-url");
+    var link_slike = "assets/img/website/" + parent.replace("https://","").split(".")[0] + "-site.jpg";
+    $(".img_pregled").html(`<img src='${link_slike}'>`).stop(true, true);
+    $(".img_pregled").append(`<button onclick='zatvori_sliku()'>Exit</button>`);
+    $(".img_pregled").fadeIn(200)
+});
+
+function zatvori_sliku(){
+    $(".img_pregled").fadeOut(200)
+}
