@@ -1,1 +1,1 @@
-Live: [https://seekiii.github.io/portfolio/](https://seekiii.github.io/portfolio/)
+Live: [https://seekiii.github.io/](https://seekiii.github.io/)
