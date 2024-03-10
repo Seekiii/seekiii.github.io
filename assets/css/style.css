@@ -227,7 +227,7 @@ li.project .preview{
 }
 .list.skills{
 	grid-template-columns: auto auto auto;
-	gap: 20px;
+	gap: 15px;
 }
 li.skill .info div{
 	margin-left: 0px !important;
@@ -316,7 +316,8 @@ li.skill{
 	border: 1px solid #ffffff08;
 	width: 180px;
 	padding: 10px 0px;
-	background: #1c1f27;
+	/*background: #1c1f27;*/
+
 }
 li.skill span{
 	color: #4f5563;
