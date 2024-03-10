@@ -225,8 +225,41 @@ li.project .preview{
 	height: 720px;
 	position: absolute;*/
 }
+.list.skills{
+	grid-template-columns: auto auto auto;
+	gap: 20px;
+}
+li.skill .info div{
+	margin-left: 0px !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+li.skill .miniIcon{
+	width: 15px;
+	height: 15px;
+	display: flex;
+	margin-right: 4px;
+    border-radius: 3px;
+}
+li.skill .info{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+li.skill h4{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	flex-direction: row;
+	/*color: var(--main_color) !important;*/
+}
+li.skill span .strong{
+	/*color: #bf2c2cdb;*/
+}
 /*--*/
-li.feedback{
+li.feedback, li.skill{
 	display: flex;
 	flex-direction: column;
 	/*align-items: center;*/
@@ -236,30 +269,30 @@ li.feedback{
 	background: #181b23;
 	border-radius: 4px;
 }
-li.feedback .info{
+li.feedback .info, li.skill .info{
 	display: flex;
 }
-li.feedback .info div{
+li.feedback .info div, li.skill .info div{
 	display: flex;
 	flex-direction: column;
 	margin-left: 10px;
 }
-li.feedback img{
+li.feedback img, li.skill img{
 	width: 43px;
 	height: 43px;
 	border-radius: 100%;
 }
-li.feedback h4{
+li.feedback h4, li.skill h4{
 	color: var(--text_color);
 	font-weight: 600;
 	font-size: 16px;
 }
-li.feedback span{
+li.feedback span, li.skill span{
 	color: #4f5563;
 	font-size: 11px;
 	font-weight: 500;
 }
-li.feedback .stars{
+li.feedback .stars, li.skill .stars{
 	margin-top: 10px;
 	display: flex;
 	align-items: center;
@@ -267,17 +300,29 @@ li.feedback .stars{
 	font-size: 13px;
 	color: var(--main_color);
 }
-li.feedback hr{
+li.feedback hr, li.skill hr{
 	height: 1px;
 	width: 100%;
 	background: #272b35;
 	margin-top: 14px;
 	display: none;
 }
-li.feedback p{
+li.feedback p, li.skill p{
 	font-size: 12px;
 	/*text-align: center;*/
 	/*font-style: italic;*/
+}
+li.skill{
+	border: 1px solid #ffffff08;
+	width: 180px;
+	padding: 10px 0px;
+	background: #1c1f27;
+}
+li.skill span{
+	color: #4f5563;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 3px;
 }
 #contact_form{
 	display: flex;
@@ -384,13 +429,16 @@ li.feedback p{
 		flex-direction: column;
 		width: 89%;
 	}
-	li.feedback{
+	li.feedback, li.skill{
 		width: calc(100% - 24px);
     	padding: 12px;
 	}
-	li.feedback p{
+	li.feedback p, li.skill p{
 		font-size: 13px;
 		text-align: left;
+	}
+	.list.skills{
+		gap: 10px;
 	}
 	section h2, #home h1{
 		text-align: center;
@@ -399,6 +447,27 @@ li.feedback p{
 	section p{
 		text-align: center;
 		font-size: 13px;	
+	}
+	li.skill .info div{
+		flex-direction: row;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+	}
+	li.skill span{
+		margin-top: 0px;
+	}
+	li.skill h4{
+		width: auto;
+		font-size: 14px;
+		font-weight: 500;
+	}
+	li.skill{
+		padding: 10px 12px;
+		border:0px;
+	}
+	li.skill .miniIcon{
+		margin-right: 9px;
 	}
 }
 
