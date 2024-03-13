@@ -385,7 +385,7 @@ li.skill span{
 		width: 100%;
 		justify-content: space-evenly;
 		flex-direction: row;
-		gap: 10px;
+		gap: 7px;
 		background: var(--background);
 		justify-content: space-evenly;
 		align-items: flex-end;
@@ -409,9 +409,8 @@ li.skill span{
 	}
 	header nav ul li.active a{
 		background: #171a21;
-		box-shadow: none;/*5px 0px 5px #13151a inset, -5px 0px 5px #13151a inset;*/
+		box-shadow: none;
 		box-shadow: 0px 0px 0px 1px #3d435347;
-		/*padding: 14px 0px;*/
 	}
 	header nav ul li.active{
 		transition: 0.1s;
@@ -422,6 +421,13 @@ li.skill span{
 	header nav ul li a i{
 		font-size: 20px;
 		margin:0px;
+	}
+
+	section{
+		height: calc(100vh - 55px);
+	}
+	section:last-child{
+		height: 100vh;
 	}
 }
 @media screen and (max-width: 900px) {
