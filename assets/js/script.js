@@ -54,3 +54,15 @@ $(".bi-image").on("click",function(){
     console.log(parent)
     img.slideDown(300)
 })
+
+function check_age(){
+    var born = 2002;
+    var month = 9;
+    var age = new Date().getFullYear() - born;
+    if (new Date().getMonth() + 1 < month) age--;
+    return age;
+}
+
+$(document).ready(function(){
+    $("#home p").text(`${check_age()} year old who sometimes programs in his free time`)
+})

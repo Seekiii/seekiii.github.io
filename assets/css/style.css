@@ -115,7 +115,7 @@ section p.quote{
 	justify-content: center;
 }
 section p.quote span{
-	color: #414551;
+	color: #595e6b;
 	font-size: 13px;
 	margin-top: 4px;
 	font-weight: 600;
@@ -145,7 +145,7 @@ section p.quote span{
 .list{
 	display: grid;
 	gap: 14px;
-	margin-top: 20px;
+	/*margin-top: 20px;*/
 	grid-template-columns: auto auto auto;
 }
 ::-webkit-scrollbar {width: 3px;}
@@ -166,6 +166,10 @@ section p.quote span{
 	color: var(--main_color);
 	font-size: 13px;
 	text-align: center;
+}
+section h3{
+	margin-top: 14px;
+	margin-bottom: 7px;
 }
 li.project{
 	background: #1c1f27;
@@ -228,6 +232,7 @@ li.project .preview{
 .list.skills{
 	grid-template-columns: auto auto auto;
 	gap: 15px;
+	margin-top: 14px;
 }
 li.skill .info div{
 	margin-left: 0px !important;
@@ -247,7 +252,7 @@ li.skill .info{
 	display: flex;
 	justify-content: center;
 }
-li.skill h4{
+li.skill h4, li.skill h3{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -282,10 +287,11 @@ li.feedback img, li.skill img{
 	height: 43px;
 	border-radius: 100%;
 }
-li.feedback h4, li.skill h4{
+li.feedback h4, li.skill h4, li.skill h3{
 	color: var(--text_color);
 	font-weight: 600;
 	font-size: 16px;
+	margin: 0px;
 }
 li.feedback span, li.skill span{
 	color: #4f5563;
@@ -320,7 +326,7 @@ li.skill{
 
 }
 li.skill span{
-	color: #4f5563;
+	color: #6a7181;
     font-size: 11px;
     font-weight: 500;
     margin-top: 3px;
@@ -391,7 +397,10 @@ li.skill span{
 		align-items: flex-end;
 	}
 	header nav ul li a span{
-		display: none;
+		/*display: none;*/
+		font-size: 11px;
+		margin-top: 1.5vw;
+		display: flex;
 	}
 	header nav ul li{
 		width: 100%;
@@ -403,20 +412,25 @@ li.skill span{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 20px 0px;
+		padding: 10px 0px;
 		background: #191c23;
 		box-shadow: 0px 0px 0px 1px #3d43534d;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	header nav ul li.active a{
-		background: #171a21;
+		background: #13151a;
 		box-shadow: none;
-		box-shadow: 0px 0px 0px 1px #3d435347;
+		/*box-shadow: 0px 0px 0px 1px #3d435347;*/
+		/*padding-bottom: 20px;*/
 	}
 	header nav ul li.active{
 		transition: 0.1s;
 	}
 	header nav ul li.active{
-		margin-bottom: -10px;
+		/*margin-bottom: -10px;*/
 	}
 	header nav ul li a i{
 		font-size: 20px;
@@ -464,7 +478,7 @@ li.skill span{
 	li.skill span{
 		margin-top: 0px;
 	}
-	li.skill h4{
+	li.skill h4, li.skill h3{
 		width: auto;
 		font-size: 14px;
 		font-weight: 500;
@@ -532,5 +546,5 @@ li.skill span{
 	}
 }
 .blockH3{
-	margin-top: 15px;margin-bottom: -10px;
+	margin-top: 14px;margin-bottom: 7px;
 }
