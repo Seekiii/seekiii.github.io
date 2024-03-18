@@ -423,8 +423,12 @@ li.skill span{
 	header nav ul li.active a{
 		background: #13151a;
 		box-shadow: none;
+		color: var(--text_color) !important;
 		/*box-shadow: 0px 0px 0px 1px #3d435347;*/
 		/*padding-bottom: 20px;*/
+	}
+	header nav ul li.active a i{
+		color: var(--main_color);
 	}
 	header nav ul li.active{
 		transition: 0.1s;
@@ -442,6 +446,16 @@ li.skill span{
 	}
 	section:last-child{
 		height: 100vh;
+	}
+	body{
+		touch-action: auto;
+		overflow-y: auto;
+	}
+	header nav ul li a:hover{
+		color: #5d6069;
+	}
+	header nav ul li a:hover i{
+		color: #606779;
 	}
 }
 @media screen and (max-width: 900px) {

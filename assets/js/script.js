@@ -1,7 +1,13 @@
-function go_to(tag) {
-  $('html, body').stop().animate({scrollTop: $("#"+tag).offset().top}, 500);
+var cTag = null
+function go_to(tag,force=true) {
+  if (cTag == tag){return}
+  cTag = tag
+  if(force){
+    $('html, body').stop().animate({scrollTop: $("#"+tag).offset().top}, 500);
+  }
   $("nav .active").removeClass("active");
   $(`a[href='/` + "#"+tag + `']`).parent().addClass("active");
+  console.log(cTag + " - "+tag)
 }
 
 $("a").on("click",function(e){
@@ -43,6 +49,29 @@ $(document).ready(function() {
     });
 });
 
+
+$(window).scroll(function(){
+        // Dobij trenutnu poziciju skrola
+        var scrollPosition = $(this).scrollTop();
+        const first = 750
+        if (scrollPosition < first){
+            go_to("home",false)
+        }
+        if (scrollPosition > first && scrollPosition < first*2){
+            go_to("skills",false)
+        }
+        if (scrollPosition > first*2 && scrollPosition < first*3){
+            go_to("projects",false)
+        }
+        if (scrollPosition > first*3 && scrollPosition < first*4){
+            go_to("feedback",false)
+        }
+        if (scrollPosition > first*4 && scrollPosition < first*5){
+            go_to("contact",false)
+        }
+        //$("nav").text(scrollPosition)
+        //$("nav").css("color","red")
+})
 
 var opened = null
 $(".bi-image").on("click",function(){
