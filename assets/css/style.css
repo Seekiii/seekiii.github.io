@@ -537,7 +537,7 @@ li.skill span{
 		grid-template-columns: repeat(1, 1fr);
 	}
 	.pre-list{
-		width: 100%;
+		width: 90%;
 		overflow:auto;
 		max-height: 40vh;
 	}
