@@ -54,8 +54,8 @@ $(window).scroll(function() {
     var scrollPosition = $(this).scrollTop();
     var sections = [
         { id: "home", element: $("#home") },
-        { id: "skills", element: $("#skills") },
         { id: "projects", element: $("#projects") },
+        { id: "skills", element: $("#skills") },
         { id: "feedback", element: $("#feedback") },
         { id: "contact", element: $("#contact") }
     ];
