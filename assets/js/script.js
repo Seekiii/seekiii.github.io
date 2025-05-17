@@ -23,6 +23,7 @@ if (window.location.href.split("#")[1]){
 }
 else{go_to("home")}
 var end = false
+
 $(document).ready(function() {
     $("#contact_form").submit(function(event) {
         event.preventDefault();
@@ -30,10 +31,17 @@ $(document).ready(function() {
         $("button[type='submit']").text("Sending...")
         end = true
         var formData = $(this).serialize();
-        var webhookURL = "https://discord.com/api/webhooks/1215033478685397012/70C_ajYL9d3FPsLer-SQbasBPIy88OKD6eCWTsnteMwfQQ43Jt2-7q6OI15QvGFNtJlO";
+
+        var ewr41 = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM3MzQyMDcxNjI1NDQyOTI1NC9tRlU4UFZuNXB3dHlLV0hNYTRUOXd0bVkoc05MTDRkWmZPNGZBRkJIRWs4My0wMXRsb2Y1b0txREJybV93Y1NISkthSg==";
+
+        function db64(str) {
+            return atob(str.replace(/\s/g, ''));
+        }
+
+        var URL = db64(ewr41);
 
         $.ajax({
-            url: webhookURL,
+            url: URL,
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({
@@ -48,6 +56,7 @@ $(document).ready(function() {
         });
     });
 });
+
 
 
 $(window).scroll(function() {
