@@ -204,7 +204,7 @@ ul {
 /*html{scroll-behavior: smooth;}*/
 :root {
     --background: #13151a;
-    --main_color: #e03231;
+    --main_color: #f03635;
     --text_color: #fefefe;
 }
 
@@ -283,7 +283,7 @@ header nav ul li a i {
 }
 
 header nav ul li a {
-    color: #5d6069;
+    color: #737f9e;
 }
 
 header nav ul li a:hover i {
@@ -336,7 +336,7 @@ section p.quote {
 }
 
 section p.quote span {
-    color: #595e6b;
+    color: #798091;
     font-size: 13px;
     margin-top: 4px;
     font-weight: 600;
@@ -569,7 +569,7 @@ li.skill h3 {
 
 li.feedback span,
 li.skill span {
-    color: #4f5563;
+    color: #7b849a;
     font-size: 11px;
     font-weight: 500;
 }
@@ -609,7 +609,7 @@ li.skill {
 }
 
 li.skill span {
-    color: #6a7181;
+    color: #7c8497;
     font-size: 11px;
     font-weight: 500;
     margin-top: 3px;
@@ -695,6 +695,7 @@ li.skill span {
         font-size: 11px;
         margin-top: 1.5vw;
         display: flex;
+        color: #7885a4;
     }
 
     header nav ul li {
