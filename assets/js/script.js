@@ -12,7 +12,6 @@ function go_to(tag, force = true) {
     }
     $("nav .active").removeClass("active");
     $(`a[href='/` + "#" + tag + `']`).parent().addClass("active");
-    console.log(cTag + " - " + tag)
 }
 
 $("a").on("click", function(e) {
@@ -66,10 +65,11 @@ $(window).scroll(function() {
     var scrollPosition = $(this).scrollTop();
     var sections = [
         {id: "home",element: $("#home")},
-        {id: "projects",element: $("#projects")},
+        {id: "thumbnails",element: $("#thumbnails")},
+        {id: "websites",element: $("#websites")},
         {id: "skills",element: $("#skills")},
-        {id: "about",element: $("#about")},
-        {id: "feedback",element: $("#feedback")},
+        //{id: "about",element: $("#about")},
+        //{id: "feedback",element: $("#feedback")},
         {id: "contact",element: $("#contact")}
     ];
 
@@ -81,17 +81,26 @@ $(window).scroll(function() {
     }
 });
 
-var opened = null
-$(".bi-image").on("click", function() {
-    $(".preview").slideUp(300)
-    var parent = $(this).parent().parent().parent()
-    var img = parent.find("img")
-    if (img.attr("src") == opened) {
-        return
-    }
-    opened = img.attr("src")
-    console.log(parent)
-    img.slideDown(300)
+$("#websites .projects .project").on("click", function() {
+    $(this).find(".preview").slideToggle(300)
+})
+
+$(".thumbs .project").on("click", function() {
+    $(this).find(".photos").slideToggle(300)
+})
+
+$(".thumbs .project img").on("click", function(e) {
+    e.stopPropagation()
+    var src = $(this).attr("src")
+    var popup = $(
+        '<div id="img-popup" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">' +
+        '<img src="' + src + '" style="max-width: 90vw; max-height: 90vh; box-shadow: 0 0 10px black; cursor: pointer;">' +
+        '</div>'
+    )
+    $("body").append(popup)
+    $("#img-popup").on("click", function() {
+        $(this).remove()
+    })
 })
 
 function check_age() {

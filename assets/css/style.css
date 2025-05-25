@@ -271,13 +271,13 @@ header nav ul li a:hover {
 header nav ul li a i {
     transition: 0.1s;
     /*width: 38px;
-	height: 38px;*/
+    height: 38px;*/
     display: flex;
     align-items: center;
     justify-content: center;
     /*background: #232731;
-	margin-right: 15px;
-	border-radius: 3px;*/
+    margin-right: 15px;
+    border-radius: 3px;*/
     margin-right: 15px;
     color: #606779;
 }
@@ -402,6 +402,38 @@ section p.quote span {
     align-items: flex-start;
 }
 
+.list.projects.thumbs {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0px auto;*/
+}
+
+.list.projects.thumbs .photos {
+    max-height: 22vh;
+    overflow: auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.list.projects.thumbs .photos img {
+    cursor: pointer;
+    transition: 0.2s;
+    box-sizing: border-box;
+    background: gray;
+}
+
+.list.projects.thumbs .photos img:hover {
+    padding: 2px;
+}
+
+.list.projects.thumbs .project {
+    width: auto;
+    min-width: 320px;
+}
+
 .list.projects p,
 .list.projects h3,
 section h3 {
@@ -460,7 +492,7 @@ li.project span {
     align-items: center;
     gap: 7px;
     font-size: 12px;
-    color: var(--text_color);
+    color: #5a6173;
 }
 
 li.project span i:nth-child(2) {
@@ -471,6 +503,11 @@ li.project span i:nth-child(2) {
 li.project .favicon {
     width: 20px;
     border-radius: 100%;
+}
+
+.projects.thumbs li.project .preview {
+    image-rendering: auto;
+    margin-top: 0px;
 }
 
 li.project .preview {
@@ -688,6 +725,8 @@ li.skill span {
         background: var(--background);
         justify-content: space-evenly;
         align-items: flex-end;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
     }
 
     header nav ul li a span {
@@ -767,10 +806,15 @@ li.skill span {
 
 @media screen and (max-width: 900px) {
 
-    #about .box .info, #about .box .image{
+    #about .box .info,
+    #about .box .image {
         width: 90%;
     }
-    #about .box{width: 100%}
+
+    #about .box {
+        width: 100%
+    }
+
     .list {
         display: flex;
         flex-direction: column;
@@ -838,9 +882,9 @@ li.skill span {
     }
 
     /*section{
-		height: calc(100dvh - 120px);
-    	margin-bottom: 120px;
-	}*/
+        height: calc(100dvh - 120px);
+        margin-bottom: 120px;
+    }*/
     #contact_form input,
     #contact_form textarea {
         width: calc(100% - 20px);
@@ -894,7 +938,8 @@ li.skill span {
     .list.projects {
         width: 95%;
     }
-    #about .box .image{
+
+    #about .box .image {
         flex-direction: column;
     }
 }
@@ -927,7 +972,8 @@ li.skill span {
     margin-top: 14px;
     margin-bottom: 7px;
 }
-#about .box{
+
+#about .box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -935,24 +981,31 @@ li.skill span {
     margin-top: 20px;
     gap: 20px;
 }
-#about .box img{
+
+#about .box img {
     width: 100px;
     border-radius: 10px;
 }
-#about .box .info, #about .box .image{
+
+#about .box .info,
+#about .box .image {
     max-width: 600px;
 }
-#about .box .image{
+
+#about .box .image {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-#about .box .info p, #about .box .image p{
+
+#about .box .info p,
+#about .box .image p {
     font-size: 14px;
     color: #b2bddb;
     width: 100%;
 }
-#about .box .info p b{
+
+#about .box .info p b {
     color: #fff;
     font-weight: 400;
 }
