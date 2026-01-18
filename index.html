@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en" style="scroll-behavior: smooth;">
+<html class="dark overflow-x-hidden" lang="en" style="scroll-behavior: smooth;">
     <head>
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -59,7 +59,7 @@
     <body class="bg-[#111111] text-white font-sans antialiased overflow-x-hidden selection:bg-primary/30">
         <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
         <nav class="fixed top-0 left-0 right-0 z-50 bg-[#111111]/85 backdrop-blur-xl border-b border-white/5">
-            <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center justify-between w-full px-4 sm:px-6 py-4 max-w-full md:max-w-7xl mx-auto">
                 <a href="#home" class="flex items-center">
                 <img src="https://i.imgur.com/ozFO0J5.png" alt="Logo" class="h-8 w-auto object-contain">
                 </a>
@@ -70,23 +70,23 @@
                     <a class="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors" href="#testimonials">Testimonials</a>
                     <a class="text-[11px] font-bold uppercase tracking-[0.2em] text-primary hover:brightness-125 transition-all" href="#contact">Contact</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 w-7 h-7 justify-center items-center">
-                    <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
-                    <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
-                    <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
+                <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 w-7 h-7 justify-center items-center shrink-0">
+                    <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"></span>
+                    <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"></span>
+                    <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"></span>
                 </button>
             </div>
             <div id="mobile-menu" class="hidden md:hidden bg-[#111111]/95 backdrop-blur-xl border-t border-white/5">
-                <div class="flex flex-col px-6 py-4 space-y-4">
-                    <a class="text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2" href="#">Home</a>
-                    <a class="text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2" href="#stack">Skills</a>
-                    <a class="text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2" href="#projects">Projects</a>
-                    <a class="text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2" href="#testimonials">Testimonials</a>
-                    <a class="text-sm font-bold uppercase tracking-[0.2em] text-primary hover:brightness-125 transition-all py-2" href="#contact">Contact</a>
+                <div class="flex flex-col items-start text-left px-6 py-4 space-y-4 w-full">
+                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#">Home</a>
+                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#stack">Skills</a>
+                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#projects">Projects</a>
+                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#testimonials">Testimonials</a>
+                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-primary hover:brightness-125 transition-all py-2 w-full" href="#contact">Contact</a>
                 </div>
             </div>
         </nav>
-        <main class="max-w-7xl mx-auto px-6 pt-40 pb-20 space-y-40">
+        <main class="w-full max-w-full md:max-w-7xl mx-auto px-4 sm:px-6 pt-40 pb-20 space-y-40">
             <section class="relative scroll-mt-[100px]" id="home">
                 <div class="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
                 <div class="flex flex-col items-start relative z-10">
@@ -94,9 +94,9 @@
                         <span class="inline-block w-2 h-2 rounded-full bg-success animate-pulse-green"></span>
                         <span class="text-zinc-500 text-xs font-bold uppercase tracking-[0.4em]">Available for new projects</span>
                     </div>
-                    <h1 class="text-7xl md:text-[11rem] font-extrabold tracking-tighter text-white leading-[0.75] mb-8">SEKI<span class="text-primary">.</span></h1>
+                    <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[11rem] font-extrabold tracking-tighter text-white leading-[0.75] mb-8 text-left">SEKI<span class="text-primary">.</span></h1>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
-                        <p class="text-zinc-400 leading-relaxed text-lg md:text-xl font-light">
+                        <p class="text-zinc-400 leading-relaxed text-base sm:text-lg md:text-xl font-light text-left">
                             Full Stack Developer & Web Designer crafting high-performance digital solutions. Specializing in advanced software programming, clean architecture, and modern user experiences.
                         </p>
                         <div class="grid grid-cols-2 gap-4">
@@ -111,11 +111,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-5 pt-16">
-                    <a class="bg-primary text-white px-12 py-6 text-xs font-black rounded-full transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(225,29,72,0.2)] transform uppercase tracking-[0.2em]" href="#projects">
+                <div class="flex flex-col sm:flex-row gap-5 pt-16 justify-start">
+                    <a class="bg-primary text-white px-12 py-6 text-xs font-black rounded-full transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(225,29,72,0.2)] transform uppercase tracking-[0.2em] w-full sm:w-auto text-center" href="#projects">
                     View Projects
                     </a>
-                    <a class="border border-white/10 text-white px-12 py-6 text-xs font-black rounded-full hover:bg-white/5 transition-all uppercase tracking-[0.2em]" href="#contact">
+                    <a class="border border-white/10 text-white px-12 py-6 text-xs font-black rounded-full hover:bg-white/5 transition-all uppercase tracking-[0.2em] w-full sm:w-auto text-center" href="#contact">
                     Let's Talk
                     </a>
                 </div>
@@ -127,7 +127,7 @@
                             <div class="w-8 h-[1px] bg-primary"></div>
                             <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Full Capabilities</h2>
                         </div>
-                        <h3 class="text-4xl md:text-5xl font-bold text-white tracking-tight">SKILLS</h3>
+                        <h3 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">SKILLS</h3>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -238,7 +238,7 @@
                         <div class="w-8 h-[1px] bg-primary"></div>
                         <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Web Portfolio</h2>
                     </div>
-                    <h3 class="text-5xl md:text-6xl font-bold text-white tracking-tight">PROJECTS</h3>
+                    <h3 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">PROJECTS</h3>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container"></div>
             </section>
@@ -248,7 +248,7 @@
                         <div class="w-8 h-[1px] bg-primary"></div>
                         <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Client Feedback</h2>
                     </div>
-                    <h3 class="text-5xl md:text-6xl font-bold text-white tracking-tight">TESTIMONIALS</h3>
+                    <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">TESTIMONIALS</h3>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="testimonials-container"></div>
             </section>
@@ -259,7 +259,7 @@
                         <div class="w-8 h-[1px] bg-primary"></div>
                         <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Get in Touch</h2>
                     </div>
-                    <h3 class="text-5xl md:text-6xl font-bold text-white tracking-tight">LET'S WORK<span class="text-primary">.</span></h3>
+                    <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">LET'S WORK<span class="text-primary">.</span></h3>
                     <p class="text-zinc-400 leading-relaxed text-lg max-w-2xl">
                         Ready to bring your project to life? Let's discuss how I can help transform your ideas into reality.
                     </p>
