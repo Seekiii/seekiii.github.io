@@ -236,11 +236,57 @@
                 <div class="space-y-4 mb-12">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-[1px] bg-primary"></div>
-                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Web Portfolio</h2>
+                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Frontend / Backend</h2>
                     </div>
-                    <h3 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">PROJECTS</h3>
+                    <h3 id="projects-title" class="flex items-center justify-between text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">
+                        <span>WEBSITES</span>
+                        <span id="projects-count" class="text-2xl text-primary font-bold"></span>
+                    </h3>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container"></div>
+                <div class="relative">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container"></div>
+                    <div id="projects-fade" class="pointer-events-none absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#111111] to-transparent opacity-0 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex justify-center">
+                    <button id="projects-toggle-btn" class="hidden mt-2 bg-primary border border-primary text-white px-8 py-3 text-[11px] font-black rounded-full transition-all hover:bg-primary/80 uppercase tracking-[0.3em]">
+                        Show More
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-[1px] bg-primary"></div>
+                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Graphic Design</h2>
+                    </div>
+                    <h3 id="thumbnails-title" class="flex items-center justify-between text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">
+                        <span>THUMBNAILS</span>
+                        <span id="thumbnails-count" class="text-2xl text-primary font-bold"></span>
+                    </h3>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="thumbnails-container"></div>
+                    <div id="thumbnails-fade" class="pointer-events-none absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#111111] to-transparent opacity-0 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex justify-center">
+                    <button id="thumbnails-toggle-btn" class="hidden mt-2 bg-primary border border-primary text-white px-8 py-3 text-[11px] font-black rounded-full transition-all hover:bg-primary/80 uppercase tracking-[0.3em]">
+                        Show More
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-[1px] bg-primary"></div>
+                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Live Repositories</h2>
+                    </div>
+                    <h3 id="github-title" class="flex items-center justify-between text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">
+                        <span>OPEN SOURCE</span>
+                        <span id="github-count" class="text-2xl text-primary font-bold"></span>
+                    </h3>
+                </div>
+                
+                <div id="github-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="col-span-full flex justify-center py-20">
+                        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+                    </div>
+                </div>
             </section>
             <section class="space-y-12 scroll-mt-[100px]" id="testimonials">
                 <div class="space-y-4 mb-12">
@@ -250,7 +296,15 @@
                     </div>
                     <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">TESTIMONIALS</h3>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="testimonials-container"></div>
+                <div class="relative">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="testimonials-container"></div>
+                    <div id="testimonials-fade" class="pointer-events-none absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#111111] to-transparent opacity-0 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex justify-center">
+                    <button id="testimonials-toggle-btn" class="hidden mt-2 bg-primary border border-primary text-white px-8 py-3 text-[11px] font-black rounded-full transition-all hover:bg-primary/80 uppercase tracking-[0.3em]">
+                        Show More
+                    </button>
+                </div>
             </section>
             <section class="relative scroll-mt-[100px]" id="contact">
                 <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -356,90 +410,82 @@
         </main>
         <style>
             .active-btn {
-                 border-color: rgba(255, 255, 255, 0.15) !important;
+                border-color: rgba(255, 255, 255, 0.15) !important;
             }
             .active-btn .bg-charcoal\/80 {
-                 background: rgba(26, 26, 26, 0.9) !important;
+                background: rgba(26, 26, 26, 0.9) !important;
             }
             .active-btn i {
-                 color: #E11D48 !important;
+                color: #E11D48 !important;
             }
             .active-btn h3 {
-                 color: #fff !important;
+                color: #fff !important;
             }
             select {
-                 appearance: none;
-                 background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E11D48' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-                 background-repeat: no-repeat;
-                 background-position: right 1rem center;
-                 background-size: 1.25em 1.25em;
-                 padding-right: 3rem;
+                appearance: none;
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E11D48' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+                background-repeat: no-repeat;
+                background-position: right 1rem center;
+                background-size: 1.25em 1.25em;
+                padding-right: 3rem;
             }
             input[type="range"] {
-                 -webkit-appearance: none;
-                 appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
             }
             input[type="range"]::-webkit-slider-thumb {
-                 -webkit-appearance: none;
-                 appearance: none;
-                 width: 28px;
-                 height: 28px;
-                 border-radius: 50%;
-                 background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
-                 cursor: pointer;
-                 box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.2), 0 4px 12px rgba(225, 29, 72, 0.5);
-                 transition: all 0.3s ease;
-                 border: 3px solid #111111;
+                -webkit-appearance: none;
+                appearance: none;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
+                cursor: pointer;
+                box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.2), 0 4px 12px rgba(225, 29, 72, 0.5);
+                transition: all 0.3s ease;
+                border: 3px solid #111111;
             }
             input[type="range"]::-webkit-slider-thumb:hover {
-                 box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.3), 0 6px 20px rgba(225, 29, 72, 0.7);
-                 transform: scale(1.15);
+                box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.3), 0 6px 20px rgba(225, 29, 72, 0.7);
+                transform: scale(1.15);
             }
             input[type="range"]::-moz-range-thumb {
-                 width: 28px;
-                 height: 28px;
-                 border-radius: 50%;
-                 background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
-                 cursor: pointer;
-                 border: 3px solid #111111;
-                 box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.2), 0 4px 12px rgba(225, 29, 72, 0.5);
-                 transition: all 0.3s ease;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
+                cursor: pointer;
+                border: 3px solid #111111;
+                box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.2), 0 4px 12px rgba(225, 29, 72, 0.5);
+                transition: all 0.3s ease;
             }
             input[type="range"]::-moz-range-thumb:hover {
-                 box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.3), 0 6px 20px rgba(225, 29, 72, 0.7);
-                 transform: scale(1.15);
+                box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.3), 0 6px 20px rgba(225, 29, 72, 0.7);
+                transform: scale(1.15);
             }
             .custom-scrollbar::-webkit-scrollbar {
-                 width: 6px;
+                width: 6px;
             }
             .custom-scrollbar::-webkit-scrollbar-track {
-                 background: rgba(255, 255, 255, 0.05);
-                 border-radius: 10px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
             }
             .custom-scrollbar::-webkit-scrollbar-thumb {
-                 background: linear-gradient(180deg, #E11D48, #F43F5E);
-                 border-radius: 10px;
+                background: linear-gradient(180deg, #E11D48, #F43F5E);
+                border-radius: 10px;
             }
             .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                 background: linear-gradient(180deg, #F43F5E, #FB7185);
+                background: linear-gradient(180deg, #F43F5E, #FB7185);
             }
-            @layer base {
-                ::-webkit-scrollbar {
-                    width: 5px;
-                }
-                ::-webkit-scrollbar-track {
-                    background: #18181b; 
-                }
-                ::-webkit-scrollbar-thumb {
-                    background: #e11d48; 
-                    border-radius: 5px;
-                }
-                ::-webkit-scrollbar-thumb:hover {
-                    background: #dc2626; 
-                }
+            .project-card {
+                transition: opacity 300ms ease, transform 300ms ease;
+            }
+            .fade-in {
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
             }
         </style>
     </body>
-    <script src="script.js"></script>
     <script src="config.js"></script>
+    <script src="script.js"></script>
 </html>
