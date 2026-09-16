@@ -372,6 +372,20 @@ const config = {
       category: 'website'
     },
     {
+      id: 'eurodrmex',
+      name: 'EuroDrmex',
+      url: 'eurodrmex.com',
+      image: 'projects/eurodrmex-site.jpg',
+      category: 'website'
+    },
+    {
+      id: 'slobius',
+      name: 'Slobius',
+      url: 'slobius.com',
+      image: 'projects/slobius-site.jpg',
+      category: 'website'
+    },
+    {
       id: 'buytopdesign2',
       name: 'Buy Top Design v2',
       url: 'buytopdesign.com',
@@ -383,6 +397,13 @@ const config = {
       name: 'Buy Top Design v1',
       url: 'buytopdesign.com',
       image: 'projects/buytopdesign-site.jpg',
+      category: 'website'
+    },
+    {
+      id: 'gradcazin',
+      name: 'Grad Cazin',
+      url: 'gradcazin.com',
+      image: 'projects/gradcazin-site.jpg',
       category: 'website'
     },
     {
@@ -407,13 +428,6 @@ const config = {
       category: 'website'
     },
     {
-      id: 'eurodrmex',
-      name: 'EuroDrmex',
-      url: 'eurodrmex.com',
-      image: 'projects/eurodrmex-site.jpg',
-      category: 'website'
-    },
-    {
       id: 'gledajme',
       name: 'GledajMe',
       url: 'gledajme.com',
@@ -428,13 +442,6 @@ const config = {
       category: 'website'
     },
     {
-      id: 'gradcazin',
-      name: 'Grad Cazin',
-      url: 'gradcazin.com',
-      image: 'projects/gradcazin-site.jpg',
-      category: 'website'
-    },
-    {
       id: 'learnfree',
       name: 'Learn-Free Academy',
       url: 'learnfree.com',
@@ -446,13 +453,6 @@ const config = {
       name: 'Umra Gift',
       url: 'umragift.com',
       image: 'projects/umragift-site.jpg',
-      category: 'website'
-    },
-    {
-      id: 'slobius',
-      name: 'Slobius',
-      url: 'slobius.com',
-      image: 'projects/slobius-site.jpg',
       category: 'website'
     },
     {
