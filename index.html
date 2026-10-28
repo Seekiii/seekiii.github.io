@@ -1,491 +1,337 @@
 <!DOCTYPE html>
-<html class="dark overflow-x-hidden" lang="en" style="scroll-behavior: smooth;">
-    <head>
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <title>SEKI | Full Stack Developer & Web Designer | Software Programmer</title>
-        <meta name="description" content="Expert Full Stack Developer and Web Designer specializing in scalable web applications, custom software programming, and modern UI/UX architecture.">
-        <meta name="keywords" content="Full Stack Developer, Web Developer, Web Designer, Programmer, Software Engineer, React, Node.js, UI/UX Design">
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <script id="tailwind-config">
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        aspectRatio: {
-                            '16/9': '16 / 9',
-                        },
-                        colors: {
-                            "primary": "#E11D48",
-                            "charcoal": "#111111",
-                            "surface": "#1A1A1A",
-                            "success": "#10b981"
-                        },
-                        fontFamily: {
-                            "sans": ["Inter", "sans-serif"]
-                        },
-                        animation: {
-                            'pulse-green': 'pulse-green 2s infinite',
-                        },
-                        keyframes: {
-                            'pulse-green': {
-                                '0%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(16, 185, 129, 0.7)' },
-                                '70%': { transform: 'scale(1)', boxShadow: '0 0 0 6px rgba(16, 185, 129, 0)' },
-                                '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(16, 185, 129, 0)' },
-                            }
-                        }
-                    },
-                },
-            }
-        </script>
-        <link rel="icon" type="image/png" href="favicon.ico">
-        <link rel="apple-touch-icon" href="https://i.imgur.com/ozFO0J5.png">
-        <meta name="author" content="seki">
-        <meta name="robots" content="index, follow">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://seekiii.github.io">
-        <meta property="og:title" content="SEKI - Expert Full Stack Developer & Programmer">
-        <meta property="og:description" content="Professional Web Developer and Designer. Creating high-performance applications and clean software solutions.">
-        <meta property="og:image" content="https://i.imgur.com/ozFO0J5.png">
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://seekiii.github.io">
-        <meta property="twitter:title" content="SEKI | Full Stack Developer & Designer">
-        <meta property="twitter:description" content="Focused on high-end web development, clean code architecture, and modern interface design.">
-        <meta property="twitter:image" content="https://i.imgur.com/ozFO0J5.png">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body class="bg-[#111111] text-white font-sans antialiased overflow-x-hidden selection:bg-primary/30">
-        <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-[#111111]/85 backdrop-blur-xl border-b border-white/5">
-            <div class="flex items-center justify-between w-full px-4 sm:px-6 py-4 max-w-full md:max-w-7xl mx-auto">
-                <a href="#home" class="flex items-center">
-                <img src="https://i.imgur.com/ozFO0J5.png" alt="Logo" class="h-8 w-auto object-contain">
-                </a>
-                <div class="hidden md:flex gap-10 items-center">
-                    <a class="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors" href="#">Home</a>
-                    <a class="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors" href="#stack">Skills</a>
-                    <a class="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors" href="#projects">Projects</a>
-                    <a class="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors" href="#testimonials">Testimonials</a>
-                    <a class="text-[11px] font-bold uppercase tracking-[0.2em] text-primary hover:brightness-125 transition-all" href="#contact">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 w-7 h-7 justify-center items-center shrink-0">
-                    <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"></span>
-                    <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"></span>
-                    <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"></span>
-                </button>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden bg-[#111111]/95 backdrop-blur-xl border-t border-white/5">
-                <div class="flex flex-col items-start text-left px-6 py-4 space-y-4 w-full">
-                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#">Home</a>
-                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#stack">Skills</a>
-                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#projects">Projects</a>
-                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors py-2 w-full" href="#testimonials">Testimonials</a>
-                    <a class="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-primary hover:brightness-125 transition-all py-2 w-full" href="#contact">Contact</a>
-                </div>
-            </div>
-        </nav>
-        <main class="w-full max-w-full md:max-w-7xl mx-auto px-4 sm:px-6 pt-40 pb-20 space-y-40">
-            <section class="relative scroll-mt-[100px]" id="home">
-                <div class="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
-                <div class="flex flex-col items-start relative z-10">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="inline-block w-2 h-2 rounded-full bg-success animate-pulse-green"></span>
-                        <span class="text-zinc-500 text-xs font-bold uppercase tracking-[0.4em]">Available for new projects</span>
-                    </div>
-                    <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[11rem] font-extrabold tracking-tighter text-white leading-[0.75] mb-8 text-left">SEKI<span class="text-primary">.</span></h1>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
-                        <p class="text-zinc-400 leading-relaxed text-base sm:text-lg md:text-xl font-light text-left">
-                            Full Stack Developer & Web Designer crafting high-performance digital solutions. Specializing in advanced software programming, clean architecture, and modern user experiences.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-gradient-to-br from-[#1A1A1A] to-[#111111] border border-white/[0.03] p-6 rounded-3xl">
-                                <span class="block text-3xl font-bold text-white mb-1" id="hero-experience">10+</span>
-                                <span class="text-[10px] text-zinc-500 uppercase font-black tracking-widest">Years in Dev</span>
-                            </div>
-                            <div class="bg-gradient-to-br from-[#1A1A1A] to-[#111111] border border-white/[0.03] p-6 rounded-3xl">
-                                <span class="block text-3xl font-bold text-white mb-1" id="hero-clients">46+</span>
-                                <span class="text-[10px] text-zinc-500 uppercase font-black tracking-widest">Global Clients</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-5 pt-16 justify-start">
-                    <a class="bg-primary text-white px-12 py-6 text-xs font-black rounded-full transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(225,29,72,0.2)] transform uppercase tracking-[0.2em] w-full sm:w-auto text-center" href="#projects">
-                    View Projects
-                    </a>
-                    <a class="border border-white/10 text-white px-12 py-6 text-xs font-black rounded-full hover:bg-white/5 transition-all uppercase tracking-[0.2em] w-full sm:w-auto text-center" href="#contact">
-                    Let's Talk
-                    </a>
-                </div>
-            </section>
-            <section class="space-y-16 scroll-mt-[100px]" id="stack">
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-[1px] bg-primary"></div>
-                            <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Full Capabilities</h2>
-                        </div>
-                        <h3 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">SKILLS</h3>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="space-y-4">
-                        <h3 class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest ml-1">Software & Web</h3>
-                        <div class="grid grid-cols-1 gap-px bg-white/5 border border-white/5 overflow-hidden rounded-xl">
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-brands fa-python text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">Python / Flask</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Advanced</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-code text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">C++ Programming</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">System</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-brands fa-js text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">JavaScript / jQuery</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Frontend</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-gears text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">Lua Scripting</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Logic</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest ml-1">Design & UI</h3>
-                        <div class="grid grid-cols-1 gap-px bg-white/5 border border-white/5 overflow-hidden rounded-xl">
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-palette text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">Adobe Photoshop</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Expert</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-bezier-curve text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">Graphic Design</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Creative</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-cube text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">3D Modeling</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Assets</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-clapperboard text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">UI/UX Interface</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Design</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest ml-1">Media & Sound</h3>
-                        <div class="grid grid-cols-1 gap-px bg-white/5 border border-white/5 overflow-hidden rounded-xl">
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-film text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">Video Editing</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Production</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-music text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">FL Studio / Beats</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Audio</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-scissors text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">Post-Production</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">Editing</span>
-                            </div>
-                            <div class="bg-charcoal p-5 flex items-center justify-between group hover:bg-zinc-900/50 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-wand-magic-sparkles text-zinc-500 group-hover:text-primary transition-colors w-5 text-center"></i>
-                                    <span class="text-zinc-300 text-sm">Visual Effects</span>
-                                </div>
-                                <span class="text-[9px] text-zinc-600 font-bold uppercase tracking-tighter">VFX</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="space-y-12 scroll-mt-[100px]" id="projects">
-                <div class="space-y-4 mb-12">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-[1px] bg-primary"></div>
-                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Frontend / Backend</h2>
-                    </div>
-                    <h3 id="projects-title" class="flex items-center justify-between text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">
-                        <span>WEBSITES</span>
-                        <span id="projects-count" class="text-2xl text-primary font-bold"></span>
-                    </h3>
-                </div>
-                <div class="relative">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container"></div>
-                    <div id="projects-fade" class="pointer-events-none absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#111111] to-transparent opacity-0 transition-opacity duration-300"></div>
-                </div>
-                <div class="flex justify-center">
-                    <button id="projects-toggle-btn" class="hidden mt-2 bg-primary border border-primary text-white px-8 py-3 text-[11px] font-black rounded-full transition-all hover:bg-primary/80 uppercase tracking-[0.3em]">
-                        Show More
-                    </button>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-[1px] bg-primary"></div>
-                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Graphic Design</h2>
-                    </div>
-                    <h3 id="thumbnails-title" class="flex items-center justify-between text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">
-                        <span>THUMBNAILS</span>
-                        <span id="thumbnails-count" class="text-2xl text-primary font-bold"></span>
-                    </h3>
-                </div>
-                <div class="relative">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="thumbnails-container"></div>
-                    <div id="thumbnails-fade" class="pointer-events-none absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#111111] to-transparent opacity-0 transition-opacity duration-300"></div>
-                </div>
-                <div class="flex justify-center">
-                    <button id="thumbnails-toggle-btn" class="hidden mt-2 bg-primary border border-primary text-white px-8 py-3 text-[11px] font-black rounded-full transition-all hover:bg-primary/80 uppercase tracking-[0.3em]">
-                        Show More
-                    </button>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-[1px] bg-primary"></div>
-                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Live Repositories</h2>
-                    </div>
-                    <h3 id="github-title" class="flex items-center justify-between text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight">
-                        <span>OPEN SOURCE</span>
-                        <span id="github-count" class="text-2xl text-primary font-bold"></span>
-                    </h3>
-                </div>
-                
-                <div id="github-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="col-span-full flex justify-center py-20">
-                        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="space-y-12 scroll-mt-[100px]" id="testimonials">
-                <div class="space-y-4 mb-12">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-[1px] bg-primary"></div>
-                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Client Feedback</h2>
-                    </div>
-                    <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">TESTIMONIALS</h3>
-                </div>
-                <div class="relative">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="testimonials-container"></div>
-                    <div id="testimonials-fade" class="pointer-events-none absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#111111] to-transparent opacity-0 transition-opacity duration-300"></div>
-                </div>
-                <div class="flex justify-center">
-                    <button id="testimonials-toggle-btn" class="hidden mt-2 bg-primary border border-primary text-white px-8 py-3 text-[11px] font-black rounded-full transition-all hover:bg-primary/80 uppercase tracking-[0.3em]">
-                        Show More
-                    </button>
-                </div>
-            </section>
-            <section class="relative scroll-mt-[100px]" id="contact">
-                <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
-                <div class="space-y-4 mb-12">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-[1px] bg-primary"></div>
-                        <h2 class="text-sm font-black uppercase tracking-[0.3em] text-primary">Get in Touch</h2>
-                    </div>
-                    <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">LET'S WORK<span class="text-primary">.</span></h3>
-                    <p class="text-zinc-400 leading-relaxed text-lg max-w-2xl">
-                        Ready to bring your project to life? Let's discuss how I can help transform your ideas into reality.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <a href="mailto:seekii.official@gmail.com" class="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-primary/50 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-surface/80 to-surface backdrop-blur-sm"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 transition-all duration-300"></div>
-                        <div class="relative p-6 space-y-4">
-                            <div class="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                                <i class="fa-solid fa-envelope text-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white uppercase tracking-wide mb-2">Email</h4>
-                                <p class="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">seekii.official@gmail.com</p>
-                            </div>
-                            <div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider">
-                                <span>Send Message</span>
-                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://github.com/seekiii" target="_blank" class="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-primary/50 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-surface/80 to-surface backdrop-blur-sm"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 transition-all duration-300"></div>
-                        <div class="relative p-6 space-y-4">
-                            <div class="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                                <i class="fa-brands fa-github text-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white uppercase tracking-wide mb-2">GitHub</h4>
-                                <p class="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">Open-source projects</p>
-                            </div>
-                            <div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider">
-                                <span>View Repos</span>
-                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://stackoverflow.com/users/15145360/%C5%A1eki" target="_blank" class="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-primary/50 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-surface/80 to-surface backdrop-blur-sm"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 transition-all duration-300"></div>
-                        <div class="relative p-6 space-y-4">
-                            <div class="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                                <i class="fa-brands fa-stack-overflow text-primary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white uppercase tracking-wide mb-2">Stack Overflow</h4>
-                                <p class="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">Answers and insights</p>
-                            </div>
-                            <div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider">
-                                <span>View Profile</span>
-                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div class="relative overflow-hidden rounded-2xl border border-white/10">
-                        <div class="absolute inset-0 bg-gradient-to-br from-zinc-900/90 to-zinc-900/50 backdrop-blur-xl"></div>
-                        <div class="relative p-8 space-y-6">
-                            <div class="flex items-center gap-3">
-                                <span class="inline-block w-3 h-3 rounded-full bg-success animate-pulse-green"></span>
-                                <h4 class="text-lg font-bold text-white uppercase tracking-wide">Available Now</h4>
-                            </div>
-                            <p class="text-zinc-400 leading-relaxed">
-                                Currently accepting new projects for freelance and full-time opportunities. Specializing in web development, custom software, and digital solutions.
-                            </p>
-                            <div class="pt-4 border-t border-white/10">
-                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold mb-3">EMAIL</p>
-                                <p class="text-2xm font-black text-primary">seekii.official@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-2xl border border-white/10">
-                        <div class="absolute inset-0 bg-gradient-to-br from-zinc-900/90 to-zinc-900/50 backdrop-blur-xl"></div>
-                        <div class="relative p-8 space-y-6">
-                            <h4 class="text-lg font-bold text-white uppercase tracking-wide mb-4">About Me</h4>
-                            <p class="text-zinc-400 leading-relaxed text-sm" id="about-description"></p>
-                            <div class="grid grid-cols-2 gap-4 pt-4">
-                                <div>
-                                    <p class="text-3xl font-bold text-primary" id="about-experience"></p>
-                                    <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold mt-1">Years Experience</p>
-                                </div>
-                                <div>
-                                    <p class="text-3xl font-bold text-primary" id="about-clients"></p>
-                                    <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold mt-1">Global Clients</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <style>
-            .active-btn {
-                border-color: rgba(255, 255, 255, 0.15) !important;
-            }
-            .active-btn .bg-charcoal\/80 {
-                background: rgba(26, 26, 26, 0.9) !important;
-            }
-            .active-btn i {
-                color: #E11D48 !important;
-            }
-            .active-btn h3 {
-                color: #fff !important;
-            }
-            select {
-                appearance: none;
-                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E11D48' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-                background-repeat: no-repeat;
-                background-position: right 1rem center;
-                background-size: 1.25em 1.25em;
-                padding-right: 3rem;
-            }
-            input[type="range"] {
-                -webkit-appearance: none;
-                appearance: none;
-            }
-            input[type="range"]::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
-                cursor: pointer;
-                box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.2), 0 4px 12px rgba(225, 29, 72, 0.5);
-                transition: all 0.3s ease;
-                border: 3px solid #111111;
-            }
-            input[type="range"]::-webkit-slider-thumb:hover {
-                box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.3), 0 6px 20px rgba(225, 29, 72, 0.7);
-                transform: scale(1.15);
-            }
-            input[type="range"]::-moz-range-thumb {
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%);
-                cursor: pointer;
-                border: 3px solid #111111;
-                box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.2), 0 4px 12px rgba(225, 29, 72, 0.5);
-                transition: all 0.3s ease;
-            }
-            input[type="range"]::-moz-range-thumb:hover {
-                box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.3), 0 6px 20px rgba(225, 29, 72, 0.7);
-                transform: scale(1.15);
-            }
-            .custom-scrollbar::-webkit-scrollbar {
-                width: 6px;
-            }
-            .custom-scrollbar::-webkit-scrollbar-track {
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 10px;
-            }
-            .custom-scrollbar::-webkit-scrollbar-thumb {
-                background: linear-gradient(180deg, #E11D48, #F43F5E);
-                border-radius: 10px;
-            }
-            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                background: linear-gradient(180deg, #F43F5E, #FB7185);
-            }
-            .project-card {
-                transition: opacity 300ms ease, transform 300ms ease;
-            }
-            .fade-in {
-                opacity: 0;
-                transition: opacity 0.5s ease-in;
-            }
-        </style>
-    </body>
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEKI | Full Stack Developer & Web Designer</title>
+<meta name="description" content="Expert Full Stack Developer and Web Designer specializing in scalable web applications, custom software programming, and modern UI/UX architecture.">
+<meta name="author" content="seki">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seekiii.github.io">
+<meta property="og:title" content="SEKI - Expert Full Stack Developer & Programmer">
+<meta property="og:description" content="Professional Web Developer and Designer. Creating high-performance applications and clean software solutions.">
+<meta property="og:image" content="https://seekiii.github.io/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="https://seekiii.github.io/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#050505;--card:#151517;--line:#232326;--fg:#f5f5f6;--mute:#8e8e96;--acc:#e11d48}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.65 Inter,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--acc)}
+body{position:relative}
+.blobs{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.blobs i{position:absolute;border-radius:50%;background:radial-gradient(circle,#e11d48,#9f1239 60%,transparent 72%);filter:blur(90px);opacity:.28;animation:float 18s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:560px;height:560px;top:-120px;left:-160px}
+.blobs i:nth-child(2){width:420px;height:420px;top:14%;right:-140px;animation-delay:-5s;opacity:.2}
+.blobs i:nth-child(3){width:620px;height:620px;top:36%;left:-260px;animation-delay:-9s;opacity:.22}
+.blobs i:nth-child(4){width:480px;height:480px;top:58%;right:-180px;animation-delay:-3s}
+.blobs i:nth-child(5){width:560px;height:560px;top:80%;left:10%;animation-delay:-12s;opacity:.2}
+.blobs i:nth-child(6){width:380px;height:380px;top:94%;right:8%;animation-delay:-7s}
+@keyframes float{to{transform:translate(70px,-50px) scale(1.15)}}
+#bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--acc);z-index:100}
+nav{position:fixed;top:0;inset-inline:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;backdrop-filter:blur(14px);background:rgba(12,12,13,.75);border-bottom:1px solid var(--line)}
+nav img{height:28px;display:block}
+nav div{display:flex;gap:30px}
+nav a{font-size:.92rem;color:var(--mute);position:relative;transition:color .2s}
+nav a:after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--acc);transition:width .3s}
+nav a:hover,nav a.on{color:var(--fg)}
+nav a.on:after,nav a:hover:after{width:100%}
+nav a:last-child{color:var(--acc)}
+main{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:120px 0 20px}
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px}
+.tag{font-size:.95rem;color:var(--mute);display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.tag.a{color:var(--acc);font-weight:500}
+.tag.a:before{content:"";width:26px;height:2px;background:var(--acc)}
+.dot{width:9px;height:9px;border-radius:50%;background:#10b981;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.7)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-size:clamp(5rem,20vw,13rem);font-weight:800;letter-spacing:-.07em;line-height:.8;margin:26px 0 34px}
+h1 span{color:var(--acc)}
+h1 b{display:inline-block;animation:drop .9s cubic-bezier(.2,.9,.3,1.25) both}
+@keyframes drop{from{opacity:0;transform:translateY(-70px) rotate(-10deg)}}
+h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin:8px 0 38px;display:flex;justify-content:space-between;align-items:baseline}
+h2 small{font-size:1.2rem;font-weight:500;color:var(--acc);letter-spacing:0}
+.lead{max-width:600px;color:var(--mute);font-weight:300;font-size:1.2rem;margin-bottom:36px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:16px 34px;border-radius:99px;font:500 .95rem Inter,sans-serif;border:1px solid var(--line);transition:box-shadow .3s,background .3s;cursor:pointer;background:none;color:var(--fg);display:inline-block;will-change:transform}
+.btn.p{background:var(--acc);border-color:var(--acc)}
+.btn:hover{box-shadow:0 12px 34px -10px rgba(225,29,72,.6)}
+.btn:not(.p):hover{background:rgba(255,255,255,.05)}
+.stats{display:flex;gap:14px;margin-top:64px;flex-wrap:wrap}
+.stat{padding:18px 26px;border:1px solid var(--line);border-radius:18px;background:var(--card);min-width:150px}
+.stat b{display:block;font-size:2.2rem;font-weight:800;line-height:1.1;letter-spacing:-.03em}
+.stat span{font-size:.85rem;color:var(--mute)}
+.marq{overflow:hidden;margin-top:70px;mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marq div{display:flex;gap:50px;width:max-content;animation:slide 35s linear infinite}
+.marq:hover div{animation-play-state:paused}
+.marq span{font-size:1.5rem;font-weight:700;color:#35353b;white-space:nowrap;transition:color .2s}
+.marq span:hover{color:var(--acc)}
+.marq i{margin-right:12px}
+@keyframes slide{to{transform:translateX(-50%)}}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.thumbs{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column;position:relative}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x,50%) var(--y,50%),rgba(225,29,72,.16),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
+.card:hover{border-color:rgba(225,29,72,.45);transform:translateY(-6px)}
+.card:hover:before{opacity:1}
+.im{aspect-ratio:16/9;overflow:hidden;background:#0e0e10}
+.im img{width:100%;height:100%;object-fit:cover;transition:transform .6s;display:block}
+.card:hover .im img{transform:scale(1.07)}
+.tx{padding:16px 20px 18px;border-top:1px solid var(--line);flex:1;display:flex;flex-direction:column;gap:4px}
+.tx small{font-size:.8rem;color:var(--acc);font-weight:500}
+.tx h4{font-size:1.05rem;font-weight:600}
+.tx p{color:var(--mute);font-size:.88rem}
+.meta{display:flex;align-items:center;gap:14px;font-size:.85rem}
+.meta small{margin-right:auto}
+.meta span{display:flex;align-items:center;gap:5px;font-weight:500}
+.meta .st{color:#facc15}
+.meta .fk{color:var(--mute)}
+.row{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.row img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.row.l{justify-content:flex-start}
+.row img{flex-shrink:0}
+.ch{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vc{flex-shrink:0;font-size:.8rem;font-weight:500;color:var(--acc);white-space:nowrap;transition:opacity .2s;position:relative;z-index:3}
+.vc:hover{opacity:.7}
+.more{display:flex;justify-content:center;margin-top:36px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.skills>div{border:1px solid var(--line);border-radius:20px;padding:22px 24px;background:var(--card)}
+.skills h5{font-size:.9rem;font-weight:500;color:var(--mute);margin-bottom:10px}
+.skills p{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);transition:padding .25s;font-size:.95rem}
+.skills p:hover{padding-left:8px}
+.skills p i{color:var(--mute);width:18px;text-align:center;transition:color .2s}
+.skills p:hover i{color:var(--acc)}
+.skills p em{margin-left:auto;font-style:normal;font-size:.8rem;color:#5a5a62}
+.quote{padding:26px;gap:16px}
+.quote q{color:#c9c9d0;font-size:.95rem;quotes:none;flex:1}
+.quote q:before{content:"\201C"}
+.quote q:after{content:"\201D"}
+.quote small{color:var(--mute)}
+.quote small i{color:var(--acc)}
+.lets{color:var(--mute);font-size:1.15rem;max-width:560px;margin:-14px 0 36px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.contact a{padding:28px;display:block;border:1px solid var(--line);border-radius:20px;background:var(--card);transition:.3s;position:relative;overflow:hidden}
+.contact a:hover{border-color:var(--acc);transform:translateY(-6px)}
+.contact i.ic{font-size:1.5rem;color:var(--acc);margin-bottom:16px;display:block}
+.contact h4{font-weight:600;font-size:1.1rem}
+.contact p{color:var(--mute);font-size:.92rem}
+.contact .go{margin-top:16px;color:var(--acc);font-size:.9rem;font-weight:500}
+.contact .go i{transition:transform .25s;margin-left:6px}
+.contact a:hover .go i{transform:translateX(5px)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:22px}
+.box{padding:30px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+.box h4{font-size:1.2rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.box p{color:var(--mute);font-size:.95rem}
+.box .mail{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);color:var(--acc);font-weight:700;font-size:1.1rem}
+.nums{display:flex;gap:40px;margin-top:22px}
+.nums b{display:block;font-size:2.2rem;color:var(--acc);font-weight:800;line-height:1.1}
+.nums span{font-size:.85rem;color:var(--mute)}
+footer{text-align:center;padding:70px 24px 40px;color:#55555c;font-size:.88rem}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.card.rv.in{transition:opacity .7s,transform .3s,border-color .3s}
+.spin{width:36px;height:36px;border:2px solid var(--line);border-top-color:var(--acc);border-radius:50%;animation:rot 1s linear infinite;margin:40px auto;grid-column:1/-1}
+@keyframes rot{to{transform:rotate(360deg)}}
+@media(max-width:700px){nav div{display:none}.stat{min-width:0;flex:1;padding:14px 16px}.stat b{font-size:1.6rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="blobs"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div id="bar"></div>
+<nav>
+<a href="#home"><img src="https://seekiii.github.io/logo.png" alt="Logo"></a>
+<div>
+<a href="#home">Home</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+<main>
+<section id="home">
+<div class="tag"><span class="dot"></span>Available for new projects</div>
+<h1 id="name"></h1>
+<p class="lead">Full Stack Developer & Web Designer crafting high-performance digital solutions. Specializing in advanced software programming, clean architecture, and modern user experiences.</p>
+<div class="btns">
+<a class="btn p" href="#projects">View Projects</a>
+<a class="btn" href="#contact">Let's Talk</a>
+</div>
+<div class="stats">
+<div class="stat"><b id="s-age">0</b><span>Years old</span></div>
+<div class="stat"><b id="s-exp">0</b><span>Years in Dev</span></div>
+<div class="stat"><b id="s-cli">0</b><span>Global Clients</span></div>
+</div>
+<div class="marq"><div id="marq"></div></div>
+</section>
+
+<section id="skills">
+<div class="tag a rv">Full Capabilities</div>
+<h2 class="rv">Skills</h2>
+<div class="skills rv" id="skillbox"></div>
+</section>
+
+<section id="projects">
+<div class="tag a rv">Frontend / Backend</div>
+<h2 class="rv">Websites <small id="c-web"></small></h2>
+<div class="grid" id="web"></div>
+<div class="more"><button class="btn p" id="b-web" hidden></button></div>
+
+<div style="height:90px"></div>
+<div class="tag a rv">Graphic Design</div>
+<h2 class="rv">Thumbnails <small id="c-thu"></small></h2>
+<div class="grid thumbs" id="thu"></div>
+<div class="more"><button class="btn p" id="b-thu" hidden></button></div>
+
+<div style="height:90px"></div>
+<div class="tag a rv">Live Repositories</div>
+<h2 class="rv">Open Source <small id="c-git"></small></h2>
+<div class="grid" id="git"><div class="spin"></div></div>
+</section>
+
+<section id="testimonials">
+<div class="tag a rv">Client Feedback</div>
+<h2 class="rv">Testimonials</h2>
+<div class="grid" id="rev"></div>
+<div class="more"><button class="btn p" id="b-rev" hidden></button></div>
+</section>
+
+<section id="contact">
+<div class="tag a rv">Get in Touch</div>
+<h2 class="rv">Let's work<span style="color:var(--acc)">.</span></h2>
+<p class="lets rv">Ready to bring your project to life? Let's discuss how I can help transform your ideas into reality.</p>
+<div class="contact rv">
+<a href="mailto:seekii.official@gmail.com"><i class="ic fa-solid fa-envelope"></i><h4>Email</h4><p>seekii.official@gmail.com</p><div class="go">Send Message<i class="fa-solid fa-arrow-right"></i></div></a>
+<a href="https://github.com/seekiii" target="_blank" rel="noopener"><i class="ic fa-brands fa-github"></i><h4>GitHub</h4><p>Open-source projects</p><div class="go">View Repos<i class="fa-solid fa-arrow-right"></i></div></a>
+<a href="https://stackoverflow.com/users/15145360/%C5%A1eki" target="_blank" rel="noopener"><i class="ic fa-brands fa-stack-overflow"></i><h4>Stack Overflow</h4><p>Answers and insights</p><div class="go">View Profile<i class="fa-solid fa-arrow-right"></i></div></a>
+</div>
+<div class="two">
+<div class="box rv">
+<h4><span class="dot"></span>Available Now</h4>
+<p>Currently accepting new projects for freelance and full-time opportunities. Specializing in web development, custom software, and digital solutions.</p>
+<div class="mail">seekii.official@gmail.com</div>
+</div>
+<div class="box rv">
+<h4>About Me</h4>
+<p id="about"></p>
+<div class="nums"><div><b id="n-exp">0</b><span>Years Experience</span></div><div><b id="n-cli">0</b><span>Global Clients</span></div></div>
+</div>
+</div>
+</section>
+</main>
+<footer>&copy; <span id="yr"></span> SEKI</footer>
+<script src="config.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fb="this.src='https://seekiii.github.io/logo.png'";
+const now=new Date(),year=now.getFullYear();
+const birth=new Date(2002,8,1);
+let age=year-birth.getFullYear();
+if(now<new Date(year,birth.getMonth(),birth.getDate()))age--;
+const exp=year-config.startYear;
+
+$('#yr').textContent=year;
+$('#about').textContent=config.aboutMe.description.replace(/over \d+ years/,`over ${exp} years`);
+$('#name').innerHTML=[...'SEKI'].map((c,i)=>`<b style="animation-delay:${i*.1}s">${c}</b>`).join('')+'<span>.</span>';
+
+const groups={
+'Software & Web':[['fa-brands fa-python','Python / Flask','Advanced'],['fa-solid fa-code','C++ Programming','System'],['fa-brands fa-js','JavaScript / jQuery','Frontend'],['fa-solid fa-gears','Lua Scripting','Logic']],
+'Design & UI':[['fa-solid fa-palette','Adobe Photoshop','Expert'],['fa-solid fa-bezier-curve','Graphic Design','Creative'],['fa-solid fa-cube','3D Modeling','Assets'],['fa-solid fa-clapperboard','UI/UX Interface','Design']],
+'Media & Sound':[['fa-solid fa-film','Video Editing','Production'],['fa-solid fa-music','FL Studio / Beats','Audio'],['fa-solid fa-scissors','Post-Production','Editing'],['fa-solid fa-wand-magic-sparkles','Visual Effects','VFX']]
+};
+$('#skillbox').innerHTML=Object.entries(groups).map(([t,l])=>`<div><h5>${t}</h5>${l.map(([i,n,k])=>`<p><i class="${i}"></i>${n}<em>${k}</em></p>`).join('')}</div>`).join('');
+const chips=Object.values(groups).flat().map(([i,n])=>`<span><i class="${i}"></i>${n}</span>`).join('');
+$('#marq').innerHTML=chips+chips;
+
+function count(el,to,plus){
+const t0=performance.now();
+(function f(t){
+const p=Math.min((t-t0)/1400,1);
+el.textContent=Math.round(to*(1-Math.pow(1-p,3)))+(plus?'+':'');
+if(p<1)requestAnimationFrame(f);
+})(t0);
+}
+count($('#s-age'),age);count($('#s-exp'),exp,1);count($('#s-cli'),config.clients,1);
+count($('#n-exp'),exp,1);count($('#n-cli'),config.clients,1);
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+function reveal(){$$('.rv:not(.in)').forEach(el=>io.observe(el))}
+
+function spot(){
+$$('.card:not([data-s])').forEach(c=>{
+c.dataset.s=1;
+c.addEventListener('mousemove',e=>{
+const r=c.getBoundingClientRect();
+c.style.setProperty('--x',e.clientX-r.left+'px');
+c.style.setProperty('--y',e.clientY-r.top+'px');
+});
+});
+}
+
+function list(id,items,card,show){
+const box=$('#'+id),btn=$('#b-'+id),total=items.length;
+let n=Math.min(show,total);
+const draw=()=>{
+box.innerHTML=items.slice(0,n).map(card).join('');
+spot();reveal();
+btn.hidden=total<=show;
+btn.textContent=n>=total?'Show Less':'Show More';
+};
+btn.onclick=()=>{n=n>=total?Math.min(show,total):total;draw()};
+draw();
+return total;
+}
+
+$('#c-web').textContent=list('web',config.projects,p=>`<div class="card rv"><div class="im"><img loading="lazy" src="${esc(p.image)}" alt="${esc(p.name)}" onerror="${fb}"></div><div class="tx"><small>${esc(p.url)}</small><h4>${esc(p.name)}</h4></div></div>`,config.projectsSettings.initialVisible);
+
+$('#c-thu').textContent=list('thu',config.thumbnails,t=>`<div class="card rv"><div class="im"><img loading="lazy" src="${esc(t.thumbnailImage)}" alt="${esc(t.channelName)}" onerror="${fb}"></div><div class="tx"><div class="row l"><img loading="lazy" src="${esc(t.channelLogo)}" alt="" onerror="${fb}"><h4 class="ch">${esc(t.channelName)}</h4><a class="vc" href="${esc(t.channelLink)}" target="_blank" rel="noopener">View Channel</a></div></div></div>`,config.thumbnailsSettings.initialVisible);
+
+list('rev',config.testimonials,t=>`<div class="card quote rv"><div class="row l"><img src="${esc(t.image)}" alt="" onerror="${fb}"><div><h4>${esc(t.name)}</h4><p style="color:var(--mute);font-size:.85rem">${esc(t.date)}</p></div></div><q>${esc(t.text)}</q><small><i class="fa-solid fa-globe"></i> ${esc(t.website)}</small></div>`,config.testimonialsSettings.initialVisible);
+
+fetch('https://api.github.com/search/repositories?q=user:seekiii&sort=stars&order=desc&per_page=6')
+.then(r=>r.ok?r.json():Promise.reject())
+.then(d=>{
+$('#git').innerHTML=d.items.map(r=>`<a class="card rv" href="${esc(r.html_url)}" target="_blank" rel="noopener"><div class="im"><img loading="lazy" src="https://opengraph.githubassets.com/1/seekiii/${esc(r.name)}" alt="${esc(r.name)}"></div><div class="tx"><div class="meta"><small>${esc(r.language||'Code')}</small><span class="st"><i class="fa-solid fa-star"></i>${r.stargazers_count}</span><span class="fk"><i class="fa-solid fa-code-fork"></i>${r.forks_count}</span></div><h4 style="text-transform:capitalize">${esc(r.name.replace(/-/g,' '))}</h4><p>${esc(r.description||'No description provided for this repository.')}</p><p style="font-size:.8rem;color:#5a5a62;margin-top:6px">Updated ${new Date(r.updated_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</p></div></a>`).join('');
+$('#c-git').textContent=d.items.length;
+spot();reveal();
+})
+.catch(()=>{$('#git').innerHTML='<p style="grid-column:1/-1;color:var(--mute)">Unable to load GitHub projects. Please visit my profile directly. <a href="https://github.com/seekiii" style="color:var(--acc)">View GitHub</a></p>'});
+
+reveal();
+
+const links=$$('nav div a'),secs=links.map(a=>$(a.getAttribute('href')));
+addEventListener('scroll',()=>{
+const h=document.documentElement;
+$('#bar').style.width=scrollY/(h.scrollHeight-innerHeight)*100+'%';
+let cur=0;
+secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight/2)cur=i});
+links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+},{passive:true});
+
+$$('.btn').forEach(b=>{
+let tx=0,ty=0,x=0,y=0,run=false;
+const step=()=>{
+x+=(tx-x)*.18;y+=(ty-y)*.18;
+b.style.transform=`translate(${x.toFixed(2)}px,${y.toFixed(2)}px)`;
+if(Math.abs(tx-x)>.05||Math.abs(ty-y)>.05)requestAnimationFrame(step);
+else{run=false;if(!tx&&!ty)b.style.transform=''}
+};
+const go=()=>{if(!run){run=true;requestAnimationFrame(step)}};
+b.addEventListener('mousemove',e=>{
+const r=b.getBoundingClientRect();
+tx=(e.clientX-r.left-r.width/2)*.2;
+ty=(e.clientY-r.top-r.height/2)*.3;
+go();
+});
+b.addEventListener('mouseleave',()=>{tx=ty=0;go()});
+});
+</script>
+</body>
 </html>
